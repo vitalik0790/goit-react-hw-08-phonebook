@@ -9,6 +9,11 @@ class LoginView extends Component {
     render() {
         const { email, password } = this.state;
 
+        const handleChange = (e) => {
+            const name = e.tagret;
+            this.setState({ [name]: e.target.value })
+        }
+
         return (
             <div>
                 <h1>Login page</h1>
