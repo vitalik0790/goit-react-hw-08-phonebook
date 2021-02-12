@@ -1,13 +1,27 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import PhoneBook from '../components/phoneBook/PhoneBook';
+import { connect } from 'react-redux';
+import contactsOperations from '../redux/contacts/contactsOperations';
 
 
 class ContactsView extends Component {
-    state = {}
+    componentDidMount() {
+        this.props.fetchContacts();
+    }
+
     render() {
         return (
-            <PhoneBook />
+            <>
+                <PhoneBook />
+            </>
         );
     }
 }
 
-export default ContactsView;
+
+
+const mapDispatchToProps = {
+    onFetchTasks: contactsOperations.fetchContacts,
+};
+
+export default connect(null, mapDispatchToProps)(ContactsView);
