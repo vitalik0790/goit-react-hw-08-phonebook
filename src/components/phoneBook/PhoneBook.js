@@ -2,22 +2,20 @@ import React, { Component } from 'react'
 import { connect } from "react-redux";
 import ContactForm from './contactForm/ContactForm'
 import ContactList from './contactList/ContactList';
-// import contactsOperations from '../../redux/contacts/contactsOperations'
+import contactsOperations from '../../redux/contacts/contactsOperations'
 import ContactFilter from './contactFilter/ContactFilter';
-import contactsSelectors from '../../redux/contacts/contactsSelectors';
+
 import { CSSTransition } from "react-transition-group";
 import s from './PhoneBook.module.css';
-// import Notification from './notification/Notification';
-// import Empty from './empty/Empty';
+
+
 
 
 class PhoneBook extends Component {
 
-    // componentDidMount() {
-    //     this.props.onFetchContacts();
-    // }
-
-
+    componentDidMount() {
+        this.props.onFetchContacts();
+    }
     render() {
         return (
             <div>
@@ -32,23 +30,16 @@ class PhoneBook extends Component {
 
                 <ContactForm />
                 <ContactFilter />
-                {/* {this.props.contacts.length > 1 &&
-                    <ContactFilter />
-                } */}
+
                 <ContactList />
             </div >
         );
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        contacts: contactsSelectors.getContacts(state),
-    }
+
+const mapDispatchToProps = {
+    onFetchContacts: contactsOperations.fetchContacts,
 }
 
-// const mapDispatchToProps = {
-//     onFetchContacts: contactsOperations.fetchContacts,
-// }
-
-export default connect(mapStateToProps)(PhoneBook);
+export default connect(null, mapDispatchToProps)(PhoneBook);
