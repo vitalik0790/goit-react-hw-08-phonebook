@@ -20,8 +20,8 @@ export default [
         component: lazy(() => import('./views/LoginView')),
     },
     {
-        path: '/tasks',
-        label: 'Tasks',
+        path: '/contacts',
+        label: 'Contacts',
         exact: true,
         component: lazy(() => import('./views/ContactsView')),
     },

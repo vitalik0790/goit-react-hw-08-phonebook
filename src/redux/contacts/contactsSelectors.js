@@ -16,13 +16,6 @@ export default {
 };
 
 
-// const getVisibleContacts = state => {
-//     const contactList = getContacts(state);
-//     const filter = getFilterValue(state).toLowerCase();
 
-//     return contactList.filter(contact =>
-//         contact.name.toLowerCase().includes(filter));
-
-// }
 
 

@@ -19,18 +19,19 @@ class RegisterView extends Component {
         email: "",
         password: "",
     }
+
+    handleChange = ({ target: { name, value } }) => {
+        this.setState({ [name]: value });
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        this.props.onRegister({ ...this.state });
+        this.setState({ name: '', email: '', password: '' });
+    };
+
     render() {
         const { name, email, password } = this.state;
-
-        handleChange = ({ target: { name, value } }) => {
-            this.setState({ [name]: value });
-        };
-
-        handleSubmit = (e) => {
-            e.preventDefault();
-            this.props.onRegister({ ...this.state });
-            this.setState({ name: '', email: '', password: '' });
-        };
 
         return (
             <div>

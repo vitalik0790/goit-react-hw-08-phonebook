@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import PhoneBook from '../components/phoneBook/PhoneBook';
+
 import { connect } from 'react-redux';
+import PhoneBook from '../components/phoneBook/PhoneBook';
 import contactsOperations from '../redux/contacts/contactsOperations';
 
 
@@ -17,8 +18,6 @@ class ContactsView extends Component {
         );
     }
 }
-
-
 
 const mapDispatchToProps = {
     onFetchTasks: contactsOperations.fetchContacts,

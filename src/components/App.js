@@ -1,5 +1,9 @@
-import React, { Component } from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import React, { Component, Suspense } from 'react';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Layout from './layout/Layout';
+import routes from '../routes';
+import authOperations from '../redux/auth/authOperations';
 
 
 import './App.css';
@@ -8,7 +12,7 @@ import './App.css';
 
 class App extends Component {
     componentDidMount() {
-
+        this.props.onGetCurrentUser();
     }
 
 
@@ -16,14 +20,20 @@ class App extends Component {
     render() {
         return (
             <BrowserRouter>
-                <div>
-                    <Switch>
-
-                    </Switch>
-                </div>
+                <Layout>
+                    <Suspense fallback={<h1>Loading...</h1>}>
+                        <Switch>
+                            {routes.map(route => (
+                                <Route key={route.path} {...route} />
+                            ))}
+                        </Switch>
+                    </Suspense>
+                </Layout>
             </BrowserRouter>
         );
     }
 }
 
-export default App;
+export default connect(null, {
+    onGetCurrentUser: authOperations.getCurrentUser,
+})(App);
