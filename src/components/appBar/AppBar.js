@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Navigation from '../navigation/Navigation';
 import UserMenu from '../userMenu/UserMenu';
-import authSelectors from '../../redux/auth/authSelectors';
+import { authSelectors } from '../../redux/auth';
 
 const styles = {
     header: {

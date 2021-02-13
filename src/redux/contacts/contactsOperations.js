@@ -1,7 +1,7 @@
 import contactsActions from './contactsActions';
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://localhost:2000';
+// axios.defaults.baseURL = 'http://localhost:2000';
 
 const addContact = ({ name, number }) => dispatch => {
     dispatch(contactsActions.addContactRequest());
@@ -34,6 +34,7 @@ const removeContact = id => dispatch => {
         .catch(error => dispatch(contactsActions.removeContactError(error)));
 }
 
+// eslint-disable-next-line
 export default {
     addContact,
     fetchContacts,

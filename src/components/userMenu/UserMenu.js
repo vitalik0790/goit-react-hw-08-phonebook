@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import authOperations from '../../redux/auth/authOperations';
-import authSelectors from '../../redux/auth/authSelectors';
+import { authOperations, authSelectors } from '../../redux/auth';
+
 const styles = {
     container: {
         display: 'flex',

@@ -8,7 +8,7 @@ const getVisibleContacts = createSelector([getContacts, getFilterValue], (contac
         contact.name.toLowerCase().includes(filter.toLowerCase()))
 });
 
-
+// eslint-disable-next-line
 export default {
     getContacts,
     getFilterValue,
