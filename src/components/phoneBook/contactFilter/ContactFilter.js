@@ -7,9 +7,9 @@ import s from './ContactFilter.module.css';
 const ContactFilter = ({ value, onHandleFilter }) => {
 
     return (
-        <div>
-            <h3>Find contacts by name</h3>
-            <input className={s.input}
+        <div className={s.wrapper}>
+            <h3 className={s.inputName}>Find contacts by name</h3>
+            <input className={s.filter}
                 type="search"
                 value={value}
                 onChange={(e) => onHandleFilter(e.target.value)}

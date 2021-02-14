@@ -17,8 +17,8 @@ const ContactList = ({ contacts, deleteContact }) => {
 
 
     return (
-        <div>
-            <h2>Contacts</h2>
+        <div className={s.wrapper}>
+            <h2 className={s.title}>CONTACTS</h2>
             <TransitionGroup component='ul' className={s.list}>
                 {contacts.map(contact => {
                     return (
@@ -27,7 +27,7 @@ const ContactList = ({ contacts, deleteContact }) => {
                             timeout={250}
                             classNames={s}>
                             <li className={s.listItem}>
-                                <span className={s.name}>{contact.name}</span>: <span>{contact.number}</span>
+                                <div><span className={s.name}>{contact.name}</span>: <span>{contact.number}</span></div>
                                 <button className={s.button} type="button" data-id={contact.id} onClick={onHandleDelete}>Delete</button>
                             </li>
                         </CSSTransition>)

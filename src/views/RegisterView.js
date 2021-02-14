@@ -1,15 +1,11 @@
 import React, { Component } from 'react'
 import { authOperations } from '../redux/auth';
 import { connect } from 'react-redux';
+import s from './RegisterView.module.css'
 
 const styles = {
     form: {
         width: 320,
-    },
-    label: {
-        display: 'flex',
-        flexDirection: 'column',
-        padding: 4,
     },
 };
 
@@ -34,13 +30,13 @@ class RegisterView extends Component {
         const { name, email, password } = this.state;
 
         return (
-            <div>
+            <div className={s.wrapper}>
                 <h1>Register page</h1>
 
-                <form onSubmit={this.handleSubmit} style={styles.form}>
-                    <label style={styles.label}>
+                <form className={s.form} onSubmit={this.handleSubmit} style={styles.form}>
+                    <label className={s.label}>
                         Name
-            <input
+            <input className={s.name}
                             type="text"
                             name="name"
                             value={name}
@@ -48,9 +44,9 @@ class RegisterView extends Component {
                         />
                     </label>
 
-                    <label style={styles.label}>
+                    <label className={s.label}>
                         Email
-            <input
+            <input className={s.mail}
                             type="email"
                             name="email"
                             value={email}
@@ -58,9 +54,9 @@ class RegisterView extends Component {
                         />
                     </label>
 
-                    <label style={styles.label}>
+                    <label className={s.label}>
                         Password
-            <input
+            <input className={s.password}
                             type="password"
                             name="password"
                             value={password}
@@ -68,7 +64,7 @@ class RegisterView extends Component {
                         />
                     </label>
 
-                    <button type="submit">Register</button>
+                    <button className={s.insert} type="submit">Register</button>
                 </form>
             </div>
         );

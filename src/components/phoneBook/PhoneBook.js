@@ -26,7 +26,7 @@ class PhoneBook extends Component {
                     timeout={500}
                     classNames={s}
                 >
-                    <h1 className={s.title}>Phonebook</h1>
+                    <h1 className={s.title}>PHONEBOOK</h1>
                 </CSSTransition>
 
                 <ContactForm />

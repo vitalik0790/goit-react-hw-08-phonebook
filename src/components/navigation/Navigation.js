@@ -9,7 +9,7 @@ const styles = {
         textDecoration: 'none',
         padding: 12,
         fontWeight: 700,
-        color: '#2A363B',
+        color: '#04CFDD',
     },
     activeLink: {
         color: '#E84A5F',
@@ -19,7 +19,7 @@ const styles = {
 const Navigation = ({ isAuthenticated }) => (
     <nav>
         <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
-            Home
+            HOME
         </NavLink>
 
         {isAuthenticated && (
@@ -29,7 +29,7 @@ const Navigation = ({ isAuthenticated }) => (
                 style={styles.link}
                 activeStyle={styles.activeLink}
             >
-                Contacts
+                CONTACTS
             </NavLink>
         )}
     </nav>

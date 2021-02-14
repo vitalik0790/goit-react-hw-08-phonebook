@@ -7,7 +7,7 @@ const styles = {
         textDecoration: 'none',
         padding: 12,
         fontWeight: 700,
-        color: '#2A363B',
+        color: '#04CFDD',
     },
     activeLink: {
         color: '#E84A5F',
@@ -22,7 +22,7 @@ const AuthNav = () => (
             style={styles.link}
             activeStyle={styles.activeLink}
         >
-            Register
+            REGISTER
     </NavLink>
         <NavLink
             to="/login"
@@ -30,7 +30,7 @@ const AuthNav = () => (
             style={styles.link}
             activeStyle={styles.activeLink}
         >
-            Login
+            LOGIN
     </NavLink>
     </div>
 );

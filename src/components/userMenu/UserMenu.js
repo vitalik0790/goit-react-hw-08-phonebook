@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { authOperations, authSelectors } from '../../redux/auth';
+import s from './UserMenu.module.css'
 
 const styles = {
     container: {
@@ -13,6 +14,7 @@ const styles = {
     name: {
         fontWeight: 700,
         marginRight: 12,
+        color: "aqua",
     },
 };
 
@@ -20,7 +22,7 @@ const UserMenu = ({ avatar, name, onLogout }) => (
     <div style={styles.container}>
         <img src={avatar} alt="" width="32" style={styles.avatar} />
         <span style={styles.name}>Welcome, {name}</span>
-        <button type="button" onClick={onLogout}>
+        <button className={s.insert} type="button" onClick={onLogout}>
             Logout
     </button>
     </div>
@@ -29,7 +31,7 @@ const UserMenu = ({ avatar, name, onLogout }) => (
 const mapStateToProps = state => ({
     name: authSelectors.getUserName(state),
     avatar:
-        'https://icon-library.net/images/avatar-icon-images/avatar-icon-images-7.jpg',
+        'https://i.ibb.co/QKh1Njr/pngkey-com-funny-png-111267.png',
 });
 
 export default connect(mapStateToProps, { onLogout: authOperations.logOut })(

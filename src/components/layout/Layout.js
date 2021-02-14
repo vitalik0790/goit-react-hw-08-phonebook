@@ -7,7 +7,7 @@ const styles = {
         width: '80vw',
         marginLeft: 'auto',
         marginRight: 'auto',
-        padding: '0 24px',
+        padding: '0 24px 34px',
     },
 };
 

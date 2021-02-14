@@ -17,22 +17,6 @@ class ContactForm extends Component {
         showEmpty: false,
     }
 
-    // componentDidMount() {
-    //     const contacts = localStorage.getItem("contacts");
-
-    //     if (contacts) {
-    //         this.props.addToLocalStorage(JSON.parse(contacts));
-    //     }
-    // }
-
-    // componentDidUpdate(prevProps) {
-    //     const { contacts } = this.props;
-
-    //     if (prevProps.contacts !== contacts) {
-    //         localStorage.setItem("contacts", JSON.stringify(contacts));
-    //     }
-    // }
-
     handleChange = (e) => {
         const name = e.target.name;
         this.setState({ [name]: e.target.value })
@@ -65,17 +49,17 @@ class ContactForm extends Component {
 
         const { newContact, showAlert, showEmpty } = this.state;
         return (
-            <div>
+            <div className={s.wrapper}>
                 <form onSubmit={this.handleSubmit} className={s.form}>
                     <label className={s.label}>
                         Name
-                    <input className={s.input} name="name" type="text" value={this.state.name} onChange={this.handleChange}></input>
+                    <input className={s.mail} name="name" type="text" value={this.state.name} onChange={this.handleChange}></input>
                     </label>
                     <label className={s.label}>
                         Number
-                    <input className={s.input} name="number" type="tel" value={this.state.number} onChange={this.handleChange}></input>
+                    <input className={s.password} name="number" type="tel" value={this.state.number} onChange={this.handleChange}></input>
                     </label>
-                    <button className={s.button} type="submit">Add contact</button>
+                    <button className={s.insert} type="submit">Add</button>
                 </form>
                 <CSSTransition in={showAlert} timeout={250} classNames={s} unmountOnExit>
                     <Notification name={newContact} />
