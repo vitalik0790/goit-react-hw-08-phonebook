@@ -14,8 +14,7 @@ const removeContactError = createAction('contacts/removeError');
 
 const onHandleFilter = createAction("contacts/handleFilter");
 
-// const addToLocalStorage = createAction("contacts/addToLocalStorage");
-
+// eslint-disable-next-line
 export default {
     onHandleFilter,
     // addToLocalStorage,

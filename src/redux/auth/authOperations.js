@@ -66,5 +66,5 @@ const logOut = () => dispatch => {
         })
         .catch(error => dispatch(authActions.logoutError(error)));
 };
-
+// eslint-disable-next-line
 export default { register, logOut, logIn, getCurrentUser };

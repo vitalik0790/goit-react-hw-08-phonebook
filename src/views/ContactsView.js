@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PhoneBook from '../components/phoneBook/PhoneBook'
+import PhoneBook from '../components/phoneBook/PhoneBook';
 
 class ContactsView extends Component {
 
@@ -11,9 +11,5 @@ class ContactsView extends Component {
         );
     }
 }
-
-// const mapDispatchToProps = {
-//     onFetchTasks: contactsOperations.fetchContacts,
-// };
 
 export default ContactsView;

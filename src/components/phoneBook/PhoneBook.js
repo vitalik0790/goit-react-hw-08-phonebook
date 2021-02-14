@@ -16,6 +16,7 @@ class PhoneBook extends Component {
     componentDidMount() {
         this.props.onFetchContacts();
     }
+
     render() {
         return (
             <div>
@@ -36,7 +37,6 @@ class PhoneBook extends Component {
         );
     }
 }
-
 
 const mapDispatchToProps = {
     onFetchContacts: contactsOperations.fetchContacts,
