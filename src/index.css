@@ -7,6 +7,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://i.ibb.co/Bt0m7Qt/welcome-home-welcome-home-de.jpg");
+  background-size: cover;
 }
 html {
   box-sizing: border-box;
